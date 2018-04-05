@@ -26,10 +26,20 @@ app.get('/demo', function (req, res) {
 
 // include the controller
 var topTenController = require('./controllers/topTenController');
+var gameController = require('./controllers/gameController');
 
 // RESTful route for topTen
 app.route('/api/topTen')
 	.get(topTenController.getTopScores)
 	.post(topTenController.saveTopScore);
+
+app.route('/api/allTerrains')
+	.get(gameController.getAllTerrains);
+
+app.route('/api/getRandomTerrain')
+	.get(gameController.getRandomTerrain);
+
+app.route('/api/gameData')
+	.get(gameController.getGameData);
 
 app.listen(1337, () => console.log('OregonTrail listening on port 1337!'));
