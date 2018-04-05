@@ -29,6 +29,7 @@ var topTenController = require('./controllers/topTenController');
 
 // RESTful route for topTen
 app.route('/api/topTen')
-	.get(topTenController.getTopScores);
+	.get(topTenController.getTopScores)
+	.post(topTenController.saveTopScore);
 
 app.listen(1337, () => console.log('OregonTrail listening on port 1337!'));
