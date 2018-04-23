@@ -45,4 +45,20 @@ app.route('/api/gameData')
 app.route('/api/updateGame')
 	.get(gameController.updateGame);
 
+app.route('/api/pace')
+	.get(gameController.getPace)
+	.post(gameController.setPace);
+
+app.route('/api/getAllPaces')
+	.get(gameController.getAllPaces);
+
+/*
+app.route('/api/setup/screen/:id')
+	.get(setupController.getgameScreen);
+
+
+app.route('/api/setup/profession')
+	.post(setupController.saveProfession);
+*/
+
 app.listen(1337, () => console.log('OregonTrail listening on port 1337!'));
